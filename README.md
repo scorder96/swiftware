@@ -1,8 +1,3 @@
-# Contents
-- Overview
-- Set up
-- Run
-
 ## Overview
 The swift.img file comes with a bootloader and kernel. <br>
 The bootloader loads the kernel into memory which features a currently unoperational CLI.
