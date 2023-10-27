@@ -1,0 +1,2 @@
+qemu-system-i386 -nographic -fda build/kernel.img
+nasm src/kernel/kernel.asm -f bin -o build/kernel.bin
