@@ -18,14 +18,14 @@ Listen:
     jmp Listen
 
 boot:
-    mov ah, 0x02
-    mov al, 0x01
-    mov ch, 0x00
-    mov cl, 0x02
-    mov dh, 0x00
-    mov dl, 0x00
-    mov bx, 0x1000
-    mov es, bx
+    mov ah, 0x02    ;Disk read mode
+    mov al, 0x01    ;No of sectors to read (1)
+    mov ch, 0x00    ;Cylinder no (0)
+    mov cl, 0x02    ;Sector no (2) because sector 1 is boot sector
+    mov dh, 0x00    ;Head no (0)
+    mov dl, 0x00    ;Drive no (0)
+    mov bx, 0x1000  ;Load here
+    mov es, bx      ;es-extra segment, used to reach a higher no of memory loc, no need so es = 0+bx = 0x1000
     int 0x13
     jc error
     mov ah, 0x0e
